@@ -7,25 +7,85 @@
         <servlet-name>xiehuohuan</servlet-name>
         <servlet-class>com.dabing.week2.demo.Hellowworldservlet</servlet-class>
     </servlet>
+        <servlet-mapping>
+            <servlet-name>xiehuohuan</servlet-name>
+            <url-pattern>/hello</url-pattern>
+        </servlet-mapping>
+
+
+
     <servlet>
         <servlet-name>LifeCycleServlet</servlet-name>
         <servlet-class>com.xiehuohuan.week3.demo.LifeCycleServlet</servlet-class>
     </servlet>
+        <servlet>
+            <servlet-name>RegisterServlet</servlet-name>
+            <servlet-class>com.xiehuohuan.week3.demo.RegisterServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>LifeCycleServlet</servlet-name>
+            <url-pattern>/life</url-pattern>
+        </servlet-mapping>
+        <servlet-mapping>
+            <servlet-name>RegisterServlet</servlet-name>
+            <url-pattern>/register</url-pattern>
+        </servlet-mapping>
+
+
+
     <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.xiehuohuan.week3.demo.RegisterServlet</servlet-class>
+        <servlet-name>JDBCDamoServlet</servlet-name>
+        <servlet-class>com.xiehuohuan.week4.demo.JDBCDamoServlet</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:sqlserver://localhost;databaseName=userdb;</param-value>
+        </init-param>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>SA</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>211816</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+        <servlet-mapping>
+            <servlet-name>JDBCDamoServlet</servlet-name>
+            <url-pattern>/jdbc</url-pattern>
+        </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>ConfigDemoServlet</servlet-name>
+        <servlet-class>com.xiehuohuan.week4.demo.ConfigDemoServlet</servlet-class>
+        <init-param>
+            <param-name>driver</param-name>
+            <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>url</param-name>
+            <param-value>jdbc:sqlserver://localhost;databaseName=userdb1;</param-value>
+        </init-param>
+        <init-param>
+            <param-name>username</param-name>
+            <param-value>SA</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>211816</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>xiehuohuan</servlet-name>
-        <url-pattern>/hello</url-pattern>
+        <servlet-name>ConfigDemoServlet</servlet-name>
+        <url-pattern>/config</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LifeCycleServlet</servlet-name>
-        <url-pattern>/life</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
+
+
 
 </web-app>

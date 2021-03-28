@@ -13,6 +13,9 @@
         <element id="directory" name="classes">
           <element id="module-output" name="2019211001000816xiehuohuan" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.microsoft.sqlserver:mssql-jdbc:8.2.2.jre8" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/xiehuohuan2019211001000816-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
