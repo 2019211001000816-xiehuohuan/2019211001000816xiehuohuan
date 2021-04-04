@@ -1,4 +1,4 @@
-package com.xiehuohuan.week3.demo;
+package com.xiehuohuan.week3;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
