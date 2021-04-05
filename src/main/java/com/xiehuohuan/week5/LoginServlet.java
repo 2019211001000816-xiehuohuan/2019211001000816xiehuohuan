@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
     boolean valid=false;
     @Override
     public void init() throws ServletException{
-        ServletConfig config=getServletConfig();
+        ServletContext config=getServletConfig().getServletContext();
         String driver=config.getInitParameter("driver");
         String url=config.getInitParameter("url");
         String user=config.getInitParameter("user");
