@@ -5,6 +5,11 @@
   Time: 21:53
   To change this template use File | Settings | File Templates.
 --%>
+<html>
+<head>
+    <title>Title</title>
+</head>
+<br>
 <%@include file="header.jsp"%>
 This is my JSP register page.<br/>
 
@@ -20,3 +25,5 @@ This is my JSP register page.<br/>
 
 
 <%@include file="footer.jsp"%>
+</body>
+</html>

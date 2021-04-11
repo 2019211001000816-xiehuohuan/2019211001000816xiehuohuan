@@ -1,4 +1,4 @@
-package com.dabing.week2.demo;
+package com.xiehuohuan.week2;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,9 +9,8 @@ import java.io.PrintWriter;
 public class Hellowworldservlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter writer =response.getWriter();
-        writer.println("Hellow Client!!!");
-        writer.println("Hellow xiehuohan!!");
-        writer.println("Hellow 2019211001000816!!!");
+        writer.println("Name:xiehuohuan");
+        writer.println("ID:2019211001000816");
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response){
 
