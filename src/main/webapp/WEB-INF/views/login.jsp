@@ -20,7 +20,7 @@
         System.out.print("<h3>"+request.getAttribute("message")+"</h3>");
     }
 %>
-<form method="post" action="/2019211001000801xiehuohuan_war_exploded/login">
+<form method="post" action="/2019211001000816xiehuohuan_war_exploded/login">
     Username:<input type="text" name="username" ><br/>
     Password:<input type="password" name="password"><br/>
     <input type="submit" value="Login"/>
