@@ -1,25 +1,36 @@
 package com.xiehuohuan.model;
 
-import java.util.Date;
 
 public class User {
     private int id;
     private String username;
-    private String password;
+    private String passward;
     private String email;
-    private String gender;
-    private java.util.Date birthDate;
+    private String genter;
+    private String birthDate;
 
-    public  User(){
+    public User() {
     }
 
-    public User(int id, String username, String password, String email, String gender, Date birthDate) {
+    public User(int id, String username, String passward, String email, String genter, String birthDate) {
         this.id = id;
         this.username = username;
-        this.password = password;
+        this.passward = passward;
         this.email = email;
-        this.gender = gender;
+        this.genter = genter;
         this.birthDate = birthDate;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", passward='" + passward + '\'' +
+                ", email='" + email + '\'' +
+                ", genter='" + genter + '\'' +
+                ", birthDate=" + birthDate +
+                '}';
     }
 
     public int getId() {
@@ -38,12 +49,12 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassward() {
+        return passward;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassward(String passward) {
+        this.passward = passward;
     }
 
     public String getEmail() {
@@ -54,31 +65,19 @@ public class User {
         this.email = email;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenter() {
+        return genter;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGenter(String genter) {
+        this.genter = genter;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                ", birthDate=" + birthDate +
-                '}';
     }
 }
