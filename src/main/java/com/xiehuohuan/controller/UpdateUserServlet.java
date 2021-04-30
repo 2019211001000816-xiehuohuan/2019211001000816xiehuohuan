@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -44,13 +45,13 @@ public class UpdateUserServlet extends HttpServlet {
         String email = request.getParameter("email");
         String gender = request.getParameter("gender");
         String birthDate = request.getParameter("birthDate");
-        User u = new User(Integer.valueOf(id), username, passward, email, gender,birthDate );
+        User u = new User(Integer.valueOf(id), username, passward, email, gender, Date.valueOf(birthDate) );
         UserDao userDao = new UserDao();
         try {
             userDao.updateUser(con,u);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/views/userInfo.jsp").include(request,response);
     }
 }
