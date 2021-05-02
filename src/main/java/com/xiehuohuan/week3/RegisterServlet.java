@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //doPost(request,response);
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);//doPost(request,response);
     }
 
     @Override
@@ -63,24 +63,24 @@ public class RegisterServlet extends HttpServlet {
             createDbStatement.executeUpdate(add);}
             String rs="select id,username,passward,email,genter,birthdate from usertable";
             ResultSet result=createDbStatement.executeQuery(rs);
-            //while(result.next()) {
-                //arr[a][0]=result.getString(1);
-                //arr[a][1]=result.getString(2);
-                //arr[a][2]=result.getString(3);
-                //arr[a][3]=result.getString(4);
-                //arr[a][4]=result.getString(5);
-                //arr[a][5]=result.getString(6);
-                //a++;
-            //}
+            /*while(result.next()) {
+                arr[a][0]=result.getString(1);
+                arr[a][1]=result.getString(2);
+                arr[a][2]=result.getString(3);
+                arr[a][3]=result.getString(4);
+                arr[a][4]=result.getString(5);
+                arr[a][5]=result.getString(6);
+                a++;
+            }*/
             request.setAttribute("rsname",result);
             response.sendRedirect("login.jsp");
-            request.getRequestDispatcher("userList.jsp").forward(request,response);
+            //request.getRequestDispatcher("userList.jsp").forward(request,response);
             System.out.println("i am in RegisterServlet-->after forward()");
             //response.sendRedirect("login.jsp");
         } catch (Exception e) {
             System.out.println(e);
         }
-        writer.println("<table border=\"1\">");
+        /*writer.println("<table border=\"1\">");
         writer.println("<tr><th>ID</th><th>UserName</th><th>Password</th><th>Email</th><th>Gender</th><th>Birthdate</th></tr>");
         for(int i=0;i<a;i++) {
            writer.println("<tr><td>"+(i+1)+"</td>");
@@ -89,6 +89,6 @@ public class RegisterServlet extends HttpServlet {
             }
             writer.println("</tr>");
         }
-        writer.println("</table>");
+        writer.println("</table>");*/
         }
 }

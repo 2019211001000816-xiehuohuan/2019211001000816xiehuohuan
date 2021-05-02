@@ -13,12 +13,12 @@
 <%
     Cookie [] allCookies=request.getCookies();
     for(Cookie c:allCookies){
-        out.println("<br/>"+c.getName()+"---"+c.getValue());
+        //out.println("<br/>"+c.getName()+"---"+c.getValue());
     }
 %>
 <%
     //User user=(User)request.getAttribute("user");
-    User u=(User)session.getAttribute("user");
+    User user=(User)session.getAttribute("user");
 %>
 <!--<table border=1>
     <tr>
@@ -45,12 +45,12 @@
     %>
 </table>-->
 <table>
-    <tr><td>id:</td><td><%=u.getId()%></td></tr>
-    <tr><td>Username:</td><td><%=u.getUsername()%></td></tr>
-    <tr><td>Password:</td><td><%=u.getPassward()%></td></tr>
-    <tr><td>email:</td><td><%=u.getEmail()%></td></tr>
-    <tr><td>Gender:</td><td><%=u.getGenter()%></td></tr>
-    <tr><td>Birth Date:</td><td><%=u.getBirthDate()%></td></tr>
+    <tr><td>id:</td><td><%=user.getId()%></td></tr>
+    <tr><td>Username:</td><td><%=user.getUsername()%></td></tr>
+    <tr><td>Password:</td><td><%=user.getPassward()%></td></tr>
+    <tr><td>email:</td><td><%=user.getEmail()%></td></tr>
+    <tr><td>Gender:</td><td><%=user.getGenter()%></td></tr>
+    <tr><td>Birth Date:</td><td><%=user.getBirthDate()%></td></tr>
     <tr><td><a href="updateUser">update</a></td></tr>
 </table>
 <%@include file="footer.jsp"%>
