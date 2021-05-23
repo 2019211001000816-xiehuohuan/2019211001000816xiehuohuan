@@ -78,14 +78,13 @@ public class Category {
         return list;
     }
     public static String findByCategoryId(Connection con,int categoryId) throws SQLException {
-        String sql="select * from Category where categoryId=?";
+        String sql="select * from Category where CategoryId=?";
         PreparedStatement pt=con.prepareStatement(sql);
         pt.setInt(1,categoryId);
         ResultSet rs=pt.executeQuery();
         String categoryName=null;
         while(rs.next()){
-            categoryName=rs.getString("categoryName");
-
+            categoryName=rs.getString("CategoryName");
         }
         return categoryName;
     }
