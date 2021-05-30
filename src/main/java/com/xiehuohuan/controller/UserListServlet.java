@@ -22,9 +22,13 @@ public class UserListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 
         String path="/WEB-INF/views/admin/userList.jsp";
 
+=======
+        String path="/WEB-INF/views/admin/userList.jsp";
+>>>>>>> github/master
         request.getRequestDispatcher(path).forward(request,response);
     }
 
