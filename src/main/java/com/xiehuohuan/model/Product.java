@@ -6,7 +6,7 @@ public class Product {
     private int productId;
     private String productName;
     private String productDescription;
-    private InputStream Picture;
+    private InputStream picture;
     private double price;
     private int categoryId;
 
@@ -16,7 +16,7 @@ public class Product {
         this.productId = productId;
         this.productName = productName;
         this.productDescription = productDescription;
-        Picture = picture;
+        this.picture = picture;
         this.price = price;
         this.categoryId = categoryId;
     }
@@ -46,11 +46,11 @@ public class Product {
     }
 
     public InputStream getPicture() {
-        return Picture;
+        return picture;
     }
 
     public void setPicture(InputStream picture) {
-        Picture = picture;
+        picture = picture;
     }
 
     public double getPrice() {
@@ -75,7 +75,7 @@ public class Product {
                 "productId=" + productId +
                 ", productName='" + productName + '\'' +
                 ", productDescription='" + productDescription + '\'' +
-                ", Picture=" + Picture +
+                ", Picture=" + picture +
                 ", price=" + price +
                 ", categoryId=" + categoryId +
                 '}';

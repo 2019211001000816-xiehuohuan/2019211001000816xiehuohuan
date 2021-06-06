@@ -1,13 +1,17 @@
 package com.xiehuohuan.controller;
 
+import com.xiehuohuan.dao.OrderDao;
+import com.xiehuohuan.model.Item;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.List;
 
-@WebServlet(name = "UserListServlet", value = "/admin/userList")
-public class UserListServlet extends HttpServlet {
+@WebServlet(name = "OrderDetailsServlet", value = "/orderDetails")
+public class OrderDetailsServlet extends HttpServlet {
     Connection con=null;
 
     @Override
@@ -22,15 +26,17 @@ public class UserListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-        String path="/WEB-INF/views/admin/userList.jsp";
-
+        int orderId=request.getParameter("orderId")!=null?Integer.parseInt(request.getParameter("orderId")):0;
+        Item item=new Item();
+        OrderDao dao=new OrderDao();
+        List<Item>items=dao.findItemsByOrderId(con,orderId);
+        request.setAttribute("itemList",items);
+        String path="orderDetails.jsp";
         request.getRequestDispatcher(path).forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request,response);
     }
 }
