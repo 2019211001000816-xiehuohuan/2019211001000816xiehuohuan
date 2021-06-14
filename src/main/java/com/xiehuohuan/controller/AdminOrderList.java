@@ -1,7 +1,9 @@
 package com.xiehuohuan.controller;
 
 import com.xiehuohuan.dao.OrderDao;
-import com.xiehuohuan.model.Item;
+import com.xiehuohuan.model.Order;
+import com.xiehuohuan.model.Payment;
+import com.xiehuohuan.week4.ConfigdemoServlet;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -10,9 +12,9 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
 
-@WebServlet(name = "OrderDetailsServlet", value = "/orderDetails")
-public class OrderDetailsServlet extends HttpServlet {
-    Connection con=null;
+@WebServlet(name = "AdminOrderList", value = "/admin/orderList")
+public class AdminOrderList extends HttpServlet {
+    Connection con;
 
     @Override
     public void init() throws ServletException {
@@ -27,17 +29,17 @@ public class OrderDetailsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int orderId=request.getParameter("orderId")!=null?Integer.parseInt(request.getParameter("orderId")):0;
-        Item item=new Item();
-        OrderDao dao=new OrderDao();
-        List<Item>items=dao.findItemsByOrderId(con,orderId);
-        request.setAttribute("itemList",items);
-        String path="orderDetails.jsp";
+        List<Payment>paymentTypeList=Payment.findAllPayment(con);
+        request.setAttribute("paymentTypeList",paymentTypeList);
+        OrderDao orderDao=new OrderDao();
+        List<Order> orderList=orderDao.findAll(con);
+        request.setAttribute("orderList",orderList);
+        String path="/WEB-INF/views/admin/orderList.jsp";
         request.getRequestDispatcher(path).forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+
     }
 }

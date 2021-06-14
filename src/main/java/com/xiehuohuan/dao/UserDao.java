@@ -43,6 +43,7 @@ public class UserDao implements IUserDao{
     public User findById(Connection con, Integer id) throws SQLException {
         String sql="select id,username,passward,email,genter,birthdate from usertable where id=?";
         PreparedStatement st=con.prepareStatement(sql);
+        st.setInt(1, id);
         ResultSet rs=st.executeQuery();
         User user=null;
         if(rs.next()){
@@ -54,7 +55,7 @@ public class UserDao implements IUserDao{
             user.setGenter(rs.getString("genter"));
             user.setBirthDate(rs.getDate("birthDate"));
         }
-        return null;
+        return user;
     }
 
     @Override
